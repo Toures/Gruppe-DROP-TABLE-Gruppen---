@@ -7,98 +7,59 @@
 <body>
 	<div id="main">
 	<h1> Spieler anlegen </h1>
-	<table>
-		<tr>
-			<td>
-		<table>
-			<tr>
-				<td>
-					Name
-				</td>
-				<td>
-					<input type="text" name="vorname" size"30" maxlength="40" value=""/>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Vorname
-				</td>
-				<td> 
-					<input type="text" name="name" size"30" maxlength="40" value=""/>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Verein
-				</td>
-				<td>
-					<input type="text" name="verein" size"30" maxlength="40" value=""/>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Coach
-				</td>
-				<td>
-					<input type="text" name="hcoach" size"30" maxlength="40" value=""/>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Assistentencoach
-				</td>
-				<td>	
-					<input type="text" name="acoach" size"30" maxlength="40" value=""/>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Aktiv
-				</td>
-				<td>
-					<input type="checkbox" name="aktiv"  /> Ja<input type="checkbox" name="nein" checked="checked" /> Nein
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Position
-				</td>
-				<td>
-					<select name="position">
-						<option value="center">Center</option> 
-						<option value="guard">Guard</option> 
-						<option value="power forward">Power Forward</option> 
-						<option value="wing" selected="selected">Wing</option> 
-						<option value="small Forward">Small Forward</option> 
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Trikotnummer
-				</td>
-				<td>
-					<input type="number" name="number" size"30" maxlength="40" value=""/>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Jahrgang
-				</td>
-				<td>
-					<input type="number" name="jahr" size"30" maxlength="40" value=""/>
-				</td>
-			</tr>
-			<tr>
-			</table>
-		</td>
-		<td id="favourite">
-			Favorit markieren <input type="checkbox" name="favorit" /> Ja<input type="checkbox" name="favorit" checked="checked"/> Nein
-		</td>
 
-	</tr>
+	<form id="player_entry" name="playerentry" action="http://martinakraus.net/createPlayer.php">
 
-		</table>
+		<div>
+			<label for="name">Name</label>
+			<input type="text" id="name" name="name"/>
+			<br>
+
+			<label for="vorname">Vorame</label>
+			<input type="text" id="vorname" name="vorname"/>
+			<br>
+
+			<label for="verein">Verein</label>
+			<input type="text" id="verein" name="verein"/>
+			<br>
+
+			<label for="headcoach">Headcoach</label>
+			<input type="text" id="headcoach" name="headcoach"/>
+			<br>
+
+			<label for="assistcoach">Assistant Coach</label>
+			<input type="text" id="assistcoach" name="assistcoach"/>
+			<br>
+
+			<label for="aktiv">Aktiv</label>
+			<input type="checkbox" id="aktiv" name="aktiv"  /> Ja<input type="checkbox" name="nein" checked="checked" /> Nein
+			<br>
+
+			<label for="position">Position</label>
+				<select name="position">
+					<option value="center">Center</option> 
+					<option value="guard">Guard</option> 
+					<option value="power forward">Power Forward</option> 
+					<option value="wing" selected="selected">Wing</option> 
+					<option value="small Forward">Small Forward</option> 
+				</select>
+			<br>
+
+			<label for="number">Nummer</label>
+			<input type="number" id="number" name="number" />
+			<br>
+
+			<label for="jahr">Jahrgang</label>
+			<input type="number" name="jahr"/>
+			<br>
+
+			<div id="favoriten">
+				<label for="favorit">Favorit markieren</lable>
+				<input type="checkbox" id="favorit" name="favorit" /> Ja<input type="checkbox" name="favorit" checked="checked"/> Nein
+			<br>
+			</div>
+		</div>
+
 		<button type="button"> Absenden </button>
 	</p>
 </div>
