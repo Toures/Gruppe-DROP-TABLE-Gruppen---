@@ -4,6 +4,25 @@ body, html {
     margin: 0;
 }
 
+label {
+	float: left;
+	clear: left;
+    width: 180px;
+    text-align: left;
+    margin: 0.5%;
+}
+
+input {
+	float:left;
+	margin: 1%;
+}
+
+select {
+	float:left;
+	margin: 1%;
+	width: 145px;
+}
+
 h1 {
 	font: bold 22px Verdana, sans-serif;
     text-align: center;
@@ -15,6 +34,18 @@ h1 b {
 	color: rgb(136,0,21);
 }
 
+#absenden{
+	float: left;
+}
+
+#favoriten{
+	float:right;
+}
+
+#auswahl{
+	float: left;
+}
+
 #main {
     position: absolute;
 	width: 40%;
@@ -24,10 +55,6 @@ h1 b {
     padding-top: 0; padding-bottom: 0; padding-left: 10%; padding-right: 10%;
 	background-color: rgb(153,217,234);
 	text-align: center;
-}
-
-#favourite {
-	float: left;
 }
 
 #menu {
@@ -48,6 +75,11 @@ h1 b {
 	width: 400px;
 	height: 70px;
 	padding-top: 30px;
+}
+
+.aktivc{
+    float: left;
+    width: 70px;
 }
 
 .button2:hover {

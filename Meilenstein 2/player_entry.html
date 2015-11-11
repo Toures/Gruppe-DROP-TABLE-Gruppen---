@@ -10,58 +10,56 @@
 
 	<form id="player_entry" name="playerentry" action="http://martinakraus.net/createPlayer.php">
 
-		<div>
+		<div id="inputdata">
 			<label for="name">Name</label>
 			<input type="text" id="name" name="name"/>
-			<br>
+			
 
 			<label for="vorname">Vorame</label>
 			<input type="text" id="vorname" name="vorname"/>
-			<br>
 
 			<label for="verein">Verein</label>
 			<input type="text" id="verein" name="verein"/>
-			<br>
+			
 
 			<label for="headcoach">Headcoach</label>
 			<input type="text" id="headcoach" name="headcoach"/>
-			<br>
+			
 
 			<label for="assistcoach">Assistant Coach</label>
 			<input type="text" id="assistcoach" name="assistcoach"/>
-			<br>
+			
 
 			<label for="aktiv">Aktiv</label>
-			<input type="checkbox" id="aktiv" name="aktiv"  /> Ja<input type="checkbox" name="nein" checked="checked" /> Nein
-			<br>
+                    <span  class="aktivc"><input type="checkbox" name="aktiv" value="Ja"/> Ja </span>
+                    <span  class="aktivc"><input type="checkbox" name="aktiv" value="Nein" checked/> Nein </span>
+			
 
 			<label for="position">Position</label>
-				<select name="position">
+				<select id="auswahl" name="position">
 					<option value="center">Center</option> 
 					<option value="guard">Guard</option> 
 					<option value="power forward">Power Forward</option> 
-					<option value="wing" selected="selected">Wing</option> 
+					<option value="wing" selected="selected">Wing</option>
 					<option value="small Forward">Small Forward</option> 
 				</select>
-			<br>
+			
 
 			<label for="number">Nummer</label>
 			<input type="number" id="number" name="number" />
-			<br>
+			
 
 			<label for="jahr">Jahrgang</label>
 			<input type="number" name="jahr"/>
-			<br>
+			
 
+
+		</div>
 			<div id="favoriten">
 				<label for="favorit">Favorit markieren</lable>
-				<input type="checkbox" id="favorit" name="favorit" /> Ja<input type="checkbox" name="favorit" checked="checked"/> Nein
-			<br>
+				<input type="checkbox" id="favorit" name="favorit" value="Ja" />
 			</div>
-		</div>
-
-		<button type="button"> Absenden </button>
-	</p>
+		<button onclick ="onSubmit()" id="absenden"type="button"> Absenden </button>
 </div>
 </body>
 </html>
