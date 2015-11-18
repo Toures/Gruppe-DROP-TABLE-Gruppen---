@@ -67,6 +67,11 @@ h1 b {
     margin-right: auto;
 }
 
+#menu a {
+    color: black;
+    text-decoration: none;
+}
+
 .button2 {
     display: flex;
     justify-content: space-around;
