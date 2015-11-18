@@ -2,7 +2,10 @@
 
 <html lang="de">
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <script type ="text/javascript" src="../Meilenstein 3/player_entry.js"> </script> 
+
 </head>
 <body>
 	<div id="main">
@@ -12,31 +15,31 @@
 
 		<div id="inputdata">
 			<label for="name">Name</label>
-			<input type="text" id="name" name="name"/>
+			<input type="text" id="name"/>
 			
 
 			<label for="vorname">Vorame</label>
-			<input type="text" id="vorname" name="vorname"/>
+			<input type="text" id="vorname"/>
 
 			<label for="verein">Verein</label>
-			<input type="text" id="verein" name="verein"/>
+			<input type="text" id="verein"/>
 			
 
 			<label for="headcoach">Headcoach</label>
-			<input type="text" id="headcoach" name="headcoach"/>
+			<input type="text" id="coach"/>
 			
 
 			<label for="assistcoach">Assistant Coach</label>
-			<input type="text" id="assistcoach" name="assistcoach"/>
+			<input type="text" id="assistentencoach"/>
 			
 
 			<label for="aktiv">Aktiv</label>
-                    <span  class="aktivc"><input type="checkbox" name="aktiv" value="Ja"/> Ja </span>
-                    <span  class="aktivc"><input type="checkbox" name="aktiv" value="Nein" checked/> Nein </span>
+                    <span  class="aktivc"><input onClick="checkBoxes(this);" type="checkbox" id="aktivJa" value="Ja"/> Ja </span>
+                    <span  class="aktivc"><input onClick="checkBoxes(this);" type="checkbox" id="aktivNein" value="Nein" checked/> Nein </span>
 			
 
 			<label for="position">Position</label>
-				<select id="auswahl" name="position">
+				<select id="position">
 					<option value="center">Center</option> 
 					<option value="guard">Guard</option> 
 					<option value="power forward">Power Forward</option> 
@@ -46,11 +49,11 @@
 			
 
 			<label for="number">Nummer</label>
-			<input type="number" id="number" name="number" />
+			<input type="number" id="trikotnummer"/>
 			
 
 			<label for="jahr">Jahrgang</label>
-			<input type="number" name="jahr"/>
+			<input type="number" id="jahrgang"/>
 			
 
 

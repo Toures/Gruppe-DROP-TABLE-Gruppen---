@@ -1,80 +1,80 @@
 body, html {
-	background-color: rgb(0,162,232);
+    background-color: rgb(0,162,232);
     height: 1200px;
     margin: 0;
 }
 
 label {
-	float: left;
-	clear: left;
+    float: left;
+    clear: left;
     width: 180px;
     text-align: left;
     margin: 0.5%;
 }
 
 input {
-	float:left;
-	margin: 1%;
+    float:left;
+    margin: 1%;
 }
 
 select {
-	float:left;
-	margin: 1%;
-	width: 145px;
+    float:left;
+    margin: 1%;
+    width: 145px;
 }
 
 h1 {
-	font: bold 22px Verdana, sans-serif;
+    font: bold 22px Verdana, sans-serif;
     text-align: center;
-	margin-top: 100px;
-	margin-bottom: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 h1 b {
-	color: rgb(136,0,21);
+    color: rgb(136,0,21);
 }
 
 #absenden{
-	float: left;
+    float: left;
 }
 
 #favoriten{
-	float:right;
+    float:right;
 }
 
 #auswahl{
-	float: left;
+    float: left;
 }
 
 #main {
     position: absolute;
-	width: 40%;
-	height: 1200px;
+    width: 50%;
+    height: 1200px;
     font: 16px Verdana, sans-serif;
     top: 0; bottom: 0; left: 20%; right: 20%;
-    padding-top: 0; padding-bottom: 0; padding-left: 10%; padding-right: 10%;
-	background-color: rgb(153,217,234);
-	text-align: center;
+    padding-top: 0; padding-bottom: 0; padding-left: 5%; padding-right: 5%;
+    background-color: rgb(153,217,234);
+    text-align: center;
 }
 
 #menu {
-	display: table;
-	width: 400px;
-	height: 300px;
-	background-color: rgb(63,72,204);
-	border: 3px solid rgb(63,72,204);
-	margin-left: auto;
-	margin-right: auto;
+    display: table;
+    width: 400px;
+    height: 300px;
+    background-color: rgb(63,72,204);
+    border: 3px solid rgb(63,72,204);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .button2 {
-	display: flex;
-	justify-content: space-around;
-	background-color: rgb(0,162,232);
-	font: bold 25px Verdana, sans-serif;
-	width: 400px;
-	height: 70px;
-	padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(0,162,232);
+    font: bold 25px Verdana, sans-serif;
+    width: 400px;
+    height: 70px;
+    padding-top: 30px;
 }
 
 .aktivc{
@@ -83,5 +83,5 @@ h1 b {
 }
 
 .button2:hover {
-	background-color: rgb(63,72,204);
+    background-color: rgb(63,72,204);
 }
