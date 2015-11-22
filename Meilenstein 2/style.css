@@ -46,22 +46,26 @@ h1 b {
     float: left;
 }
 #tablebuttons{
+    display:table;
     width:100%;
     font-size: 20px;
+    border-top:3px solid black;
 
 }
 
 #tablebutton1{
-    width:50%;
-    float: left;
+    width: 49%;
+    float : left;
     border:3px solid black;
+    border-top:0px;
     border-bottom: 0px;
 }
 #tablebutton2{
-    width:50%;
-    float: right;
-
+    float:right;
+    width:49%;
     border:3px solid black;
+    border-left:0px;
+    border-top:0px;
     border-bottom: 0px;
 }
 #main {
