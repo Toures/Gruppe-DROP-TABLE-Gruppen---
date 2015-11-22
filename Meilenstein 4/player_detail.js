@@ -1,29 +1,54 @@
 ﻿var tabledata = new XMLHttpRequest();
+var tableSelect = 0;
 tabledata.open("GET","./data.json");
 tabledata.onreadystatechange = callbackHandler;
 tabledata.send();
 
 function callbackHandler(){
 	if((tabledata.readyState==4)&&(tabledata.status==200)&&tabledata.responseText!=null){
-		tabledraw(tabledata.responseText);
+		tabledraw(tabledata.responseText, false);
 	}
 }
 
-function tabledraw(data) {
+function onClick(element) {
+	switch(element.ID) {
+
+		case "tableButton1":
+			if(tableSelect != 1) {
+				tabledraw(tabledata.responseText, false);
+				element.style.backgroundColor = "rgb(0,38,255)";
+				element.style.color = "rgb(255,255,255)";
+				tableSelect = 1;
+			}
+			break;
+
+		case "tableButton2":
+			if(tableSelect != 2) {
+				tabledraw(tabledata.responseText, true);
+				element.style.backgroundColor = "rgb(0,38,255)";
+				element.style.color = "rgb(255,255,255)";
+				tableSelect = 2;
+			}
+
+	}
+}
+
+function tabledraw(data,showFavourites) {
 	var arr = eval(data);
 	var tableString = '<table>' +
 					'<tr>'+
 					'<th>Spieler</th>'+
 					'<th>Verein</th>'+
-					'<th>Headcoach</th>'+
-					'<th>Assistantcoach</th>'+
+					'<th>Head&shy;coach</th>'+
+					'<th>Assistant&shy;coach</th>'+
 					'<th>Position</th>'+
 					'<th>Aktiv</th>'+
-					'<th>Rückennummer</th>'+
-					'<th>Geburtsjahr</th>'+
+					'<th>Rücken&shy;nummer</th>'+
+					'<th>Geburts&shy;jahr</th>'+
 					'</tr>';
-	var i;
-	for(i = 0 ; i < arr.length ; i++){
+
+	for(var i = 0 ; i < arr.length ; i++){
+		if(!showFavourites || arr[i].isFavorite) {
 		tableString += "<tr><td>" + arr[i].firstname + ", " + arr[i].surname + "</td>"
 					+ "<td>" + arr[i].team + "</td>"
 					+ "<td>" + arr[i].headcoach + "</td>"
@@ -32,7 +57,13 @@ function tabledraw(data) {
 					+ "<td>" + (arr[i].isActive ? "Ja" : "Nein") + "</td>"
 					+ "<td>" + arr[i].number + "</td>"
 					+ "<td>" + arr[i].year + "</td></tr>";
+		}
 	}
 	tableString += "</table>";
 	document.getElementById("table01").innerHTML = tableString;
+
+	if(showFavourites)
+		tableSelect = 2;
+	else
+		tableSelect = 1;
 }
