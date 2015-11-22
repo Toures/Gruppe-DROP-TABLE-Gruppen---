@@ -11,13 +11,11 @@ function callbackHandler(){
 }
 
 function onClick(element) {
-	switch(element.ID) {
+	switch(element.id) {
 
 		case "tableButton1":
 			if(tableSelect != 1) {
 				tabledraw(tabledata.responseText, false);
-				element.style.backgroundColor = "rgb(0,38,255)";
-				element.style.color = "rgb(255,255,255)";
 				tableSelect = 1;
 			}
 			break;
@@ -25,8 +23,6 @@ function onClick(element) {
 		case "tableButton2":
 			if(tableSelect != 2) {
 				tabledraw(tabledata.responseText, true);
-				element.style.backgroundColor = "rgb(0,38,255)";
-				element.style.color = "rgb(255,255,255)";
 				tableSelect = 2;
 			}
 
@@ -62,8 +58,22 @@ function tabledraw(data,showFavourites) {
 	tableString += "</table>";
 	document.getElementById("table01").innerHTML = tableString;
 
-	if(showFavourites)
+	if(showFavourites) {
+		var element2 = document.getElementById("tableButton2");
+		element2.style.backgroundColor = "rgb(0,38,255)";
+		element2.style.color = "rgb(255,255,255)";
+		var element1 = document.getElementById("tableButton1");
+		element1.style.backgroundColor = "rgb(153,217,234)";
+		element1.style.color = "black";
 		tableSelect = 2;
-	else
+	}
+	else {
+		var element1 = document.getElementById("tableButton1");
+		element1.style.backgroundColor = "rgb(0,38,255)";
+		element1.style.color = "rgb(255,255,255)";
+		var element2 = document.getElementById("tableButton2");
+		element2.style.backgroundColor = "rgb(153,217,234)";
+		element2.style.color = "black";
 		tableSelect = 1;
+	}
 }
