@@ -11,9 +11,9 @@ function callbackHandler(){
 
 function tabledraw(data) {
 	var arr = eval(data);
-	var tableString = '<table border=\"1\">' +
+	var tableString = '<table>' +
 					'<tr>'+
-					'<th> Spieler(Vor und Nachname)</th>'+
+					'<th>Spieler</th>'+
 					'<th>Verein</th>'+
 					'<th>Headcoach</th>'+
 					'<th>Assistantcoach</th>'+
@@ -29,7 +29,7 @@ function tabledraw(data) {
 					+ "<td>" + arr[i].headcoach + "</td>"
 					+ "<td>" + arr[i].asisstantcoach + "</td>"
 					+ "<td>" + arr[i].position + "</td>"
-					+ "<td>" + arr[i].isActive + "</td>"
+					+ "<td>" + (arr[i].isActive ? "Ja" : "Nein") + "</td>"
 					+ "<td>" + arr[i].number + "</td>"
 					+ "<td>" + arr[i].year + "</td></tr>";
 	}
