@@ -34,15 +34,15 @@ h1 b {
     color: rgb(136,0,21);
 }
 
-#absenden{
+#absenden {
     float: left;
 }
 
-#favoriten{
-    float:right;
+#absenden {
+    clear: left;
 }
 
-#auswahl{
+#auswahl {
     float: left;
 }
 
