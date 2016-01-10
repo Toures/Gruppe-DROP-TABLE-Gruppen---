@@ -1,8 +1,16 @@
 #!/usr/bin/env node
-var http = require('http');
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.text());
 
-http.createServer(function (req, res){
-	res.writeHead(200, {'Content-Type':'text/plain'});
-	res.end('Sie haben sich erfolgreich auf den WebServer mit der URL 127.0.0.1:1337 verbunden!');
-	console.log('<User connected to server>');
-}).listen(1337,'127.0.0.1');
+app.get('/player_entry', function(req,res) {
+	console.log(req.body);
+});
+	
+var server = app.listen(1337, function() {
+	var host = server.address().address;
+	var port = server.address().port;
+	
+	console.log('NodeJS Server running, accepting \'GET\' on localhost:1337/player_entry');
+});
