@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>BPDb - Mark Beckmann & Mike Hukiewitz</title>
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-  <script type ="text/javascript" src="player_entry.js"> </script> 
+  <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+  <script type ="text/javascript" src="../js/player_entry.js"> </script> 
 
 </head>
 <body>

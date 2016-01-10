@@ -2,7 +2,7 @@
 
 <html lang="de">
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
 	<title>BPDb - Mark Beckmann & Mike Hukiewitz</title>
 </head>
 <body>
@@ -10,7 +10,7 @@
 		<h1>
 			<b>B</b>asketball <b>P</b>layer <b>D</b>ata<b>b</b>ase
 		</h1>
-		<img src="basketball.jpg" alt="Eine Silouhette eines Basketballkorbs und eines Spielers."/>
+		<img src="../assets/basketball.jpg" alt="Eine Silouhette eines Basketballkorbs und eines Spielers."/>
 		<div id="menu">
 			<a href="player_entry.html">
 				<div class="button2">
