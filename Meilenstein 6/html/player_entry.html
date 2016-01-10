@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>BPDb - Mark Beckmann & Mike Hukiewitz</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+  <script type ="text/javascript" src="../js/player_entry.js"> </script> 
+
+</head>
+<body>
+	<div id="main">
+		<h1> Spieler anlegen </h1>
+
+		<form id="player_entry" name="playerentry" action="127.0.0.1:1337/player_entry" method="get">
+
+			<div id="inputdata">
+				<label for="name">Name</label>
+				<input type="text" id="name"/>
+				
+
+				<label for="vorname">Vorame</label>
+				<input type="text" id="vorname"/>
+
+				<label for="verein">Verein</label>
+				<input type="text" id="verein"/>
+				
+
+				<label for="coach">Headcoach</label>
+				<input type="text" id="coach"/>
+				
+
+				<label for="assistentencoach">Assistant Coach</label>
+				<input type="text" id="assistentencoach"/>
+				
+
+				<label >Aktiv</label>
+	                    <span  class="aktivc"><input onClick="checkBoxes(this);" type="checkbox" id="aktivJa" value="Ja"/> <label for="aktivJa">Ja</label> </span>
+	                    <span  class="aktivc"><input onClick="checkBoxes(this);" type="checkbox" id="aktivNein" value="Nein" checked/> <label for="aktivJa">Nein</label> </span>
+				
+
+				<label for="position">Position</label>
+					<select id="position">
+						<option value="center">Center</option> 
+						<option value="guard">Guard</option> 
+						<option value="power forward">Power Forward</option> 
+						<option value="wing" selected="selected">Wing</option>
+						<option value="small Forward">Small Forward</option> 
+					</select>
+				
+
+				<label for="trikotnummer">Nummer</label>
+				<input type="number" id="trikotnummer"/>
+				
+
+				<label for="jahrgang">Jahrgang</label>
+				<input type="number" id="jahrgang"/>
+				
+				<label for="favorit">Favorit markieren</label>
+				<input type="checkbox" id="favorit" name="favorit" value="Ja" />
+				
+			</div>
+			<button onclick ="onSubmit()" id="absenden" type="button"> Absenden </button>
+		</form>
+
+		<h2><a href="home.html">Zurück</a></h2>
+	</div>
+</body>
+</html>
