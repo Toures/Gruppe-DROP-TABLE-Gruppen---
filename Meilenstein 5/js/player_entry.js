@@ -34,6 +34,10 @@ function onSubmit() {
     if (firstError != null) {
         alert('Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie ihre Eingaben');
         firstError.focus();
+        return false;
+    }
+    else {
+    	return true;
     }
 }
 
