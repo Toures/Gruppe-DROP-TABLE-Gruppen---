@@ -49,7 +49,7 @@ app.get('/Favorites', function(req, res){
 		for(var i = 0; i<arrayJson.length; i++){
 			if(arrayJson[i].isFavorite){
 				favoriteJson.push({
-					 "_id"           : jSonArray[i]._id,
+					"_id"           : jSonArray[i]._id,
                     "isActive"      : jSonArray[i].isActive,
                     "isFavorite"    : jSonArray[i].isFavorite,
                     "year"          : jSonArray[i].year,

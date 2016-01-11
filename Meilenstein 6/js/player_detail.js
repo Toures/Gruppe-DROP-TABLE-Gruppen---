@@ -1,13 +1,24 @@
 ﻿var tabledata = new XMLHttpRequest();
 var tableSelect = 0;
-tabledata.open("GET","../js/data.json");
-tabledata.onreadystatechange = callbackHandler;
-tabledata.send();
 
 function callbackHandler(){
 	if((tabledata.readyState==4)&&(tabledata.status==200)&&tabledata.responseText!=null){
 		tabledraw(tabledata.responseText, false);
 	}
+}
+
+function favorites(){
+
+	tabledata.open("GET", "http://127.0.0.1:1337/Favorites", true);
+	tabledata.onreadystatechange = callbackHandler;
+	tabledata.send();
+}
+
+function allPlayers(){
+
+	tabledata.open("GET", "http://127.0.0.1:1337/AllPlayers", true);
+	tabledata.onreadystatechange = callbackHandler;
+	tabledata.send();
 }
 
 function onClick(element) {
