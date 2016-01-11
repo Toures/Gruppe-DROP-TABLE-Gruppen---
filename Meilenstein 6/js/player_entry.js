@@ -32,10 +32,29 @@ function onSubmit() {
         jahrgang.style.borderColor = 'green';
     }
     if (firstError != null) {
-        alert('Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie ihre Eingaben');
+    	alert('Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie ihre Eingaben');
         firstError.focus();
     }
-}
+    else {
+    	var request = new XMLHttpRequest();
+    	var json = [];
+		json.push({
+         "isActive"      : document.getElementById('aktivJa').checked,
+         "isFavorite"    : favorit.checked,
+         "year"          : jahrgang.value,
+         "number"        : trikotnummer.value,
+         "firstname"     : vorname.value,
+         "surname"       : name.value,
+         "headcoach"     : coach.value,
+         "asisstantcoach": assistentencoach.value,
+         "team"          : verein.value,
+         "position"      : position.value
+         });
+		}
+		request.open("POST", "http://127.0.0.1:1337/Player");
+		request.setRequestHeader("Access-Control-Allow-Origin","*");
+		request.send(JSON.stringify(json));
+}	
 
 function checkBoxes(box) {
     var aktivJa = document.getElementById('aktivJa');

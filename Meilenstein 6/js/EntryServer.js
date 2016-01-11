@@ -1,11 +1,21 @@
 #!/usr/bin/env node
 var express = require('express');
+var http = require('http');
 var app = express();
 var fs = require('fs');
 var path = require('path');
 var qs = require('querystring');
 
 app.use(express.static(path.resolve(__dirname,'../')));
+
+// Fix for XMLHttpRequest (Danke an Webspiders!)
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, PUT");
+
+    next();
+});
 
 app.post('/player_entry', function(req,res) {
 	var body = '';
@@ -30,21 +40,22 @@ app.post('/player_entry', function(req,res) {
 });
 
 app.put('/Player', function(req, res){
-
-	var writeToFile = req.body.vorname + ', ' + req.body.name + ", " + req.body.jahrgang + ', ' + req.body.coach + ', ' + 
+	console.log("Hello!");
+	var input = req.body.vorname + ', ' + req.body.name + ", " + req.body.jahrgang + ', ' + req.body.coach + ', ' + 
 		req.body.asisstantcoach + ', ' + req.body.position + ', ' + req.body.number + '\n';
 
 		fs.appendFile('form.txt', input, function(err){
 			if(err) throw err;
 		});
-		res.end("Player hinzugefügt!");
+		res.writeHead(301, {Location: 'http://127.0.0.1:1337/html/player_entry.html'});
+		res.end();
+		console.log(input);
 });
 
 app.get('/AllPlayers', function(req,res){
 	fs.readFile("data.json",'utf8', function(err, data){
 		if(err) throw err;
-		res.writeHead(200, {'Content-Type':'application/json'});
-		res.header({'Access-Control-Allow-Origin':'*'});
+		res.writeHead(200, {'Content-Type':'text/plain'});
 		res.end(data);
 	})
 
@@ -75,8 +86,7 @@ app.get('/Favorites', function(req, res){
 				});
 			}
 		}
-		res.writeHead(200, {'Content-Type':'application/json'});
-		res.header({'Access-Control-Allow-Origin':'*'});
+		res.writeHead(200, {'Content-Type':'text/plain'});
 		res.end(JSON.stringify(favoriteJson));
 	});
 
