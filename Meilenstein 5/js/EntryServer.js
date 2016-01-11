@@ -8,22 +8,22 @@ var qs = require('querystring');
 app.use(express.static(path.resolve(__dirname,'../')));
 
 app.post('/player_entry', function(req,res) {
-	console.log("Hello!");
-	
 	var body = '';
+	//Event Handling
 	req.on('data', function (data) {
 		body += data;
 		});
 
 	req.on('end', function () {
 	var post = qs.parse(body);
-	var writeToFile = post.vorname + ' ' + post.name + ', ' + post.jahrgang + ', ' + post.coach + ', ' +
+	var input = post.vorname + ' ' + post.name + ', ' + post.jahrgang + ', ' + post.coach + ', ' +
                 post.assistentencoach + ', ' + post.position + ", " + post.trikotnummer + '\n';
 
-   fs.appendFile('form.txt', writeToFile, function (err) {
+   fs.appendFile('form.txt', input, function (err) {
    	if (err) throw err;
       });
-	
+
+	console.log(input);
 	res.writeHead(200, {'Content-Type': 'text/plain'});
             
 	res.send(req.body);
@@ -31,5 +31,5 @@ app.post('/player_entry', function(req,res) {
 });
 	
 var server = app.listen(1337, function() {
-	console.log('NodeJS Server running, accepting \'GET\' on localhost:1337/player_entry');
+	console.log('NodeJS Server running, accepting \'POST\' on localhost:1337/player_entry');
 });
