@@ -30,6 +30,17 @@ app.post('/player_entry', function(req,res) {
 	});
 });
 
+app.put('/Player', function(req, res){
+
+	var writeToFile = req.body.vorname + ', ' + req.body.name + ", " + req.body.jahrgang + ', ' + req.body.coach + ', ' + 
+		req.body.asisstantcoach + ', ' + req.body.position + ', ' + req.body.number + '\n';
+
+		fs.appendFile('form.txt', input, function(err){
+			if(err) throw err;
+		});
+		res.end("Player hinzugefügt!");
+});
+
 app.get('/AllPlayers', function(req,res){
 	fs.readFile("data.json",'utf8', function(err, data){
 		if(err) throw err;
@@ -68,6 +79,7 @@ app.get('/Favorites', function(req, res){
 	});
 
 });
+
 
 
 var server = app.listen(1337, function() {
