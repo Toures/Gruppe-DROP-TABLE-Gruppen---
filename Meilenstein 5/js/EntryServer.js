@@ -26,7 +26,7 @@ app.post('/player_entry', function(req,res) {
 	console.log(input);
 	res.writeHead(200, {'Content-Type': 'text/plain'});
             
-	res.send(req.body);
+	res.send(path.resolve(__dirname,'../html/player_entry.html'));
 	});
 });
 	
